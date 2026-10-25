@@ -1,0 +1,15 @@
+.camera-scene{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#fff}
+.camera-plane{position:absolute;left:50%;top:50%;width:2048px;height:1152px;transform-origin:center}
+#camera-reference,#camera-faces{position:absolute;inset:0;width:2048px;height:1152px;max-width:none}
+#camera-reference{object-fit:fill;pointer-events:none;transition:transform .42s cubic-bezier(.2,.7,.25,1);transform-origin:50% 54%}
+#camera-faces[hidden]{display:none}
+#parcel-trigger{position:absolute;left:590px;top:345px;width:870px;height:550px;clip-path:polygon(22% 0,100% 21%,99% 61%,82% 100%,1% 73%,0 35%);border:0;padding:0;background:transparent;cursor:pointer;pointer-events:auto;touch-action:manipulation}
+#parcel-trigger:disabled{cursor:wait}
+#parcel-trigger:focus-visible{outline:none;background:#f8e64628}
+@media(hover:hover) and (pointer:fine){.camera-plane:has(#parcel-trigger:hover) #camera-reference{transform:scale(1.055)}}
+.camera-plane:has(#parcel-trigger:focus-visible) #camera-reference{transform:scale(1.055)}
+.marquee,.footer{opacity:var(--camera-ui-opacity,1)}
+#intro[data-camera] .marquee,#intro[data-camera] .footer{pointer-events:none}
+#intro[data-camera] #camera-reference{transition:none;transform:none}
+#intro[data-camera="finished"] .marquee,#intro[data-camera="finished"] .footer{visibility:hidden}
+@media(prefers-reduced-motion:reduce){#camera-reference{transition:none}}

@@ -1,0 +1,14 @@
+#delivery-receipt{position:absolute;left:600px;top:-45px;width:1904.64px;height:1071.36px;z-index:3;pointer-events:none;will-change:transform}
+#delivery-receipt[hidden]{display:none}
+#delivery-receipt svg{display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+#receipt-sign{position:absolute;left:953.25px;top:706.8px;width:190.65px;height:122.76px;border:0;background:transparent;padding:0;cursor:pointer;pointer-events:auto;transform:rotate(23deg);transform-origin:50% 50%;touch-action:manipulation}
+#receipt-sign:disabled{pointer-events:none;cursor:default}
+#receipt-sign:focus-visible{outline:3px dashed #ed6962;outline-offset:4px;border-radius:8px}
+#receipt-prompt{transform-origin:1118px 826px}
+#delivery-receipt[data-state="ready"] #receipt-prompt{animation:receipt-nudge 2.7s ease-in-out infinite}
+#receipt-check{opacity:0;transform:scale(0);transform-origin:0 0}
+#delivery-receipt[data-state="signing"] #receipt-check,#delivery-receipt[data-state="leaving"] #receipt-check,#delivery-receipt[data-state="done"] #receipt-check{opacity:1;transform:scale(1)}
+.receipt-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@keyframes receipt-nudge{0%,68%,100%{transform:translate(0,0) rotate(0)}72%{transform:translate(-1.7px,0) rotate(-.65deg)}76%{transform:translate(1.7px,0) rotate(.65deg)}80%{transform:translate(-1px,0) rotate(-.4deg)}84%{transform:translate(1px,0) rotate(.4deg)}88%{transform:translate(0,0) rotate(0)}}
+@media(max-width:700px){#receipt-sign{left:892.8px;top:655.65px;width:279px;height:223.2px}}
+@media(prefers-reduced-motion:reduce){#delivery-receipt[data-state="ready"] #receipt-prompt{animation:none}}

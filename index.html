@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jerry’s Portfolio — Brand Design, IP Design, Poster Design & Personal Practice.">
+  <title>Jerry’s Portfolio</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;background:#fff;color:#080808;font-family:Arial,Helvetica,sans-serif}body{overflow-x:hidden}.home{position:relative;height:100svh;min-height:480px;overflow:hidden}.marquee{position:relative;z-index:2;overflow:hidden;width:100%;white-space:nowrap}.title{height:10.8%;border-bottom:1px solid #555;font-size:3.45vw}.services{height:8%;font-size:2.52vw}.track{display:flex;align-items:center;width:max-content;height:100%;will-change:transform}.group{display:flex;align-items:center;flex-shrink:0;gap:2.3vw;padding-right:2.3vw}.title .track{animation:right 32s linear infinite}.services .track{animation:left 30s linear infinite}.title .group{gap:2.5vw;padding-right:2.5vw}.arrow{width:3.55vw;height:3.55vw;flex-shrink:0}.dot{display:inline-block;width:1.32vw;height:1.32vw;border-radius:50%;background:#050505;flex-shrink:0}.parcel-area{position:absolute;inset:19% 0 10%;display:flex;align-items:center;justify-content:center}.parcel{position:relative;width:59vw;max-width:1300px;aspect-ratio:3508/2480;transform:translateX(-1%)}.parcel img{display:block;width:100%;height:100%;object-fit:contain;transition:transform 420ms cubic-bezier(.2,.7,.25,1);transform-origin:52% 55%}.hitbox{position:absolute;left:14%;top:19%;width:80%;height:64%;cursor:pointer;clip-path:polygon(20% 0,90% 22%,100% 56%,75% 100%,0 72%,0 35%)}.parcel:has(.hitbox:hover) img,.parcel:has(.hitbox:focus-visible) img{transform:scale(1.055)}.hitbox:focus-visible{outline:3px solid #e7cd23;outline-offset:8px}.footer{position:absolute;inset:0;pointer-events:none;z-index:1}.footer img{width:100%;height:100%;object-fit:fill;display:block}@keyframes left{from{transform:translateX(0)}to{transform:translateX(-50%)}}@keyframes right{from{transform:translateX(-50%)}to{transform:translateX(0)}}@media(max-width:700px){.home{min-height:550px}.title{height:11%;font-size:7vw}.title .group{gap:5vw;padding-right:5vw}.arrow{width:7vw;height:7vw}.services{height:7%;font-size:4.5vw}.services .group{gap:4vw;padding-right:4vw}.dot{width:2.4vw;height:2.4vw}.parcel{width:108vw;max-width:none}.parcel-area{inset:18% 0 13%}.footer{top:auto;height:24vw;overflow:hidden}.footer img{position:absolute;bottom:0;height:56.25vw}}@media(prefers-reduced-motion:reduce){.track{animation-play-state:paused!important}.parcel img{transition:none}}
+  </style>
+  <link rel="stylesheet" href="camera.css">
+  <link rel="stylesheet" href="receipt.css?v=1">
+  <link rel="stylesheet" href="showcase.css?v=practice-4">
+  <link rel="stylesheet" href="practice.css?v=ip-entry-23">
+  <link rel="stylesheet" href="about.css?v=about-25">
+</head>
+<body>
+  <main class="home" id="intro" aria-label="Jerry 的作品集首页">
+    <header class="marquee title" aria-label="Jerry’s Portfolio — 2026 / 20??"><div class="track" id="title-track"></div></header>
+    <div class="marquee services" aria-label="Brand Design, IP Design, Poster Design, ??? Design"><div class="track" id="services-track"></div></div>
+    <div class="camera-scene"><div class="camera-plane"><img id="camera-reference" src="assets/camera-start-web.jpg" alt="Jerry 的作品集纸箱，贴有黄色 PORTFOLIO 胶带及设计分类标签" draggable="false" fetchpriority="high"><div id="camera-faces" hidden aria-hidden="true"></div><button id="parcel-trigger" type="button" aria-label="点击箱子，播放视角推进动画"></button></div></div>
+    <footer class="footer" aria-label="跑步、步行与站立图形装饰"><img src="assets/footer.png" alt="" aria-hidden="true"></footer>
+  </main>
+  <script>
+    const arrow='<svg class="arrow" viewBox="0 0 72 72" fill="none" aria-hidden="true"><circle cx="36" cy="36" r="33" stroke="#292522" stroke-width="2"/><path d="M12 36h49M35 11l26 25-26 25" stroke="#292522" stroke-width="2"/></svg>';
+    const title='<span>JERRY’S PORTFOLIO</span>'+arrow+'<span>2026 / 20??</span>'+arrow;
+    const services=['BRAND DESIGN','IP DESIGN','POSTER DESIGN','??? DESIGN'].map(s=>'<span>'+s+'</span><i class="dot"></i>').join('');
+    for(const [id,content] of [['title-track',title],['services-track',services]])document.getElementById(id).innerHTML=[0,1].map(()=>'<div class="group" aria-hidden="true">'+content+content+'</div>').join('');
+  </script>
+  <script src="assets/camera-textures.js"></script>
+  <script src="camera.js?v=receipt-events-1"></script>
+  <script src="receipt.js?v=showcase-1"></script>
+  <script src="showcase.js?v=about-25"></script>
+  <script type="importmap">{"imports":{"three":"./vendor/three/three.module.js"}}</script>
+  <script type="module" src="practice.js?v=contact-about-26"></script>
+  <script type="module" src="about.js?v=about-25"></script>
+</body>
+</html>
+
